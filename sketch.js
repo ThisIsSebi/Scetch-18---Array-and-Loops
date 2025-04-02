@@ -2,29 +2,20 @@
 
 var nums = [100, 25, 46, 72];
 
-var col = {
-  r: 0,
-  g: 0,
-  b: 0
-}
-
+var randomColor;
 
 function setup() {
- 
-}
 
-function draw() {
-  background(0);
-  createBubbles()
-}
-
-function createBubbles(){
+   //tiny canvas
+   createCanvas(500, 500);
+  
+   //white background
+   background(0);
   var x = 100;
   for (var i = 0; i < 4; i++) {
-    col.r = random(0,255);
-    col.g = random(0,255);
-    col.b = random(0,255);
-    fill(col.r, col.g, col.b)
+    randomColor = color(random(255), random(255), random(255))
+    fill(randomColor)
+
     ellipse(x, 200, nums[i], nums[i]);
     x += 100;
   }
